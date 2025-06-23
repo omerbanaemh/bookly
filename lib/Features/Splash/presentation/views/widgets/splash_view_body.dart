@@ -1,4 +1,5 @@
 import 'package:bookly/core/utlis/app_router.dart';
+import 'package:bookly/Features/Splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utlis/assets.dart';
@@ -42,17 +43,7 @@ class _SplashViewBodyState extends State<SplashViewBody>  with SingleTickerProvi
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Image.asset(AssetsData.logo),
-        AnimatedBuilder(
-        animation: slidingAnimation,
-        builder: (context, _) {
-          return SlideTransition(
-            position: slidingAnimation,
-            child: const Text(
-              'Read Free Books',
-              textAlign: TextAlign.center,
-            ),
-          );
-        })
+        SlidingText(slidingAnimation: slidingAnimation)
       ],
     );
   }
@@ -87,3 +78,4 @@ class _SplashViewBodyState extends State<SplashViewBody>  with SingleTickerProvi
     );
   }
 }
+
