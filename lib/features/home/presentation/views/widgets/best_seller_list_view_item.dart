@@ -1,10 +1,9 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
-import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
-import 'package:bookly/features/home/presentation/views/widgets/custom_book_item.dart';
+import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -21,7 +20,7 @@ final  BookModel book ;
         height: 125,
         child: Row(
           children: [
-            CustomBookImage(imageUrl: book.volumeInfo.imageLinks!.thumbnail),
+            CustomBookImage(imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? ''),
             SizedBox(width: 30),
             Expanded(
               child: Column(
@@ -39,7 +38,8 @@ final  BookModel book ;
                     ),
                   ),
                   const SizedBox(height: 3),
-                  Text(book.volumeInfo.authors![0],style: Styles.textStyle14,),
+                  Text(book.volumeInfo.authors![0],style: Styles.textStyle14, maxLines: 1,
+                      overflow: TextOverflow.ellipsis,),
                   const SizedBox(height: 3),
 
                   Row(
