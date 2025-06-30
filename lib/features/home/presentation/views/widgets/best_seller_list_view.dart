@@ -46,17 +46,6 @@ class BestSellerListView extends StatelessWidget {
                 }, childCount: state.books.length),
               ),
             ],
-            // child: ListView.builder(
-            //   physics: const NeverScrollableScrollPhysics(),
-            //   padding: EdgeInsets.zero,
-            //   itemCount: state.books.length ,
-            //   itemBuilder: (context, index) {
-            //     return  Padding(
-            //       padding:const EdgeInsets.symmetric(vertical: 10),
-            //       child: BookListViewItem(book: state.books[index],),
-            //     );
-            //   },
-            // ),
           );
         } else if (state is NewsetBooksFailure) {
           return CustomErrorWidget(errMessage: state.errMessage);

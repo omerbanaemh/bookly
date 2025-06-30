@@ -29,7 +29,7 @@ final  BookModel book ;
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
                     child: Text(
-                      book.volumeInfo.title!,
+                      book.volumeInfo.title ?? '',
                       style: Styles.textStyle20.copyWith(
                         fontFamily: kGtSectraFine,
                       ),
@@ -38,7 +38,7 @@ final  BookModel book ;
                     ),
                   ),
                   const SizedBox(height: 3),
-                  Text(book.volumeInfo.authors![0],style: Styles.textStyle14, maxLines: 1,
+                  Text(book.volumeInfo.authors?[0] ?? '',style: Styles.textStyle14, maxLines: 1,
                       overflow: TextOverflow.ellipsis,),
                   const SizedBox(height: 3),
 

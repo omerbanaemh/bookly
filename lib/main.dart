@@ -1,6 +1,7 @@
 
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
+import 'package:bookly/core/utils/ob_Server/bloc_observer.dart';
 import 'package:bookly/core/utils/service_locator.dart';
 import 'package:bookly/features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly/features/home/presentation/manger/featured_books_cubit/featured_books_cubit.dart';
@@ -11,6 +12,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 void main() {
     setupServiceLocator();
+      Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }
 
